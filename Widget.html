@@ -1,0 +1,36 @@
+<div id="live-viewers-container">
+    <span class="eye-icon">👁️</span>
+    <span id="live-viewers-count">10</span> 
+    <span>Personas viendo este producto ahora!</span>
+</div>
+
+<style>
+    #live-viewers-container {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #d9534f;
+        background: rgba(255, 230, 230, 0.8);
+        padding: 8px 12px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: fit-content;
+    }
+
+    .eye-icon {
+        font-size: 16px;
+    }
+</style>
+
+<script>
+    function getRandomViewers() {
+        return Math.floor(Math.random() * (20 - 5 + 1)) + 5; // Número aleatorio entre 5 y 20
+    }
+
+    function updateViewersCount() {
+        document.getElementById("live-viewers-count").textContent = getRandomViewers();
+    }
+
+    setInterval(updateViewersCount, 60000); // Actualiza cada 60 segundos
+</script>
